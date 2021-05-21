@@ -55,11 +55,15 @@ public class Main {
 		ArrayList<Character> chosenLetters = new ArrayList<Character>();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1fe10b73edb9c00776e55979bd15bc93fbfb9d12
 		chosenLetters.add('c');
 		//chosenLetters.add('b');
 		String myWord= "cabcc";
 		DisplayHiddenWord(myWord,chosenLetters);
-=======
+
 		//chosenLetters.add('a');
 		//chosenLetters.add('b');
 		//String myWord= "abc";
@@ -67,13 +71,22 @@ public class Main {
 
 >>>>>>> Dominique
 		DisplayHiddenWord(selectedWord,chosenLetters);
->>>>>>> Dominique
+
 		
 		Scanner sc = new Scanner(System.in);
 		while (numberOfChances > 0) {
 			char cValeurSaisie = sc.next().charAt(0);
 			System.out.println("Vous avez saisi "+ cValeurSaisie);
 			chosenLetters.add(cValeurSaisie);
+<<<<<<< HEAD
+=======
+			//if(contains_char(selectedWord,cValeurSaisie)) {
+				DisplayHiddenWord(selectedWord,chosenLetters);
+			//}
+			
+
+		}numberOfChances--;
+>>>>>>> 1fe10b73edb9c00776e55979bd15bc93fbfb9d12
 
 			DisplayHiddenWord(selectedWord,chosenLetters);
 
