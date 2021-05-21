@@ -83,9 +83,9 @@ public class Main {
 			char cValeurSaisie = sc.next().charAt(0);
 			System.out.println("Vous avez saisi "+ cValeurSaisie);
 			chosenLetters.add(cValeurSaisie);
-			if(contains_char(selectedWord,cValeurSaisie)) {
+			//if(contains_char(selectedWord,cValeurSaisie)) {
 				DisplayHiddenWord(selectedWord,chosenLetters);
-			}
+			//}
 
 		}
 
