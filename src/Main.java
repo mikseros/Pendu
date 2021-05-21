@@ -14,22 +14,9 @@ public class Main {
 				}
 			i++;
 		}
+
 		return;
 	}
-	
-    public static boolean contains_char (String input, char secondary)
-    {
-        boolean contains_result = false;
-        for (int i = 0 ; i < input.length () ; i++)
-        {
-            if (input.charAt (i) == secondary)
-            {
-                contains_result = true;
-                break;
-            }
-        }
-        return contains_result;
-    }
 
 	public static void GetLetter(int i) 
 	{
@@ -67,6 +54,7 @@ public class Main {
 		int numberOfChances = 8;
 		ArrayList<Character> chosenLetters = new ArrayList<Character>();
 <<<<<<< HEAD
+<<<<<<< HEAD
 		chosenLetters.add('c');
 		//chosenLetters.add('b');
 		String myWord= "cabcc";
@@ -75,21 +63,25 @@ public class Main {
 		//chosenLetters.add('a');
 		//chosenLetters.add('b');
 		//String myWord= "abc";
+=======
+
+>>>>>>> Dominique
 		DisplayHiddenWord(selectedWord,chosenLetters);
 >>>>>>> Dominique
 		
 		Scanner sc = new Scanner(System.in);
-		while (chosenLetters.size()<numberOfChances) {
+		while (numberOfChances > 0) {
 			char cValeurSaisie = sc.next().charAt(0);
 			System.out.println("Vous avez saisi "+ cValeurSaisie);
 			chosenLetters.add(cValeurSaisie);
-			if(contains_char(selectedWord,cValeurSaisie)) {
-				DisplayHiddenWord(selectedWord,chosenLetters);
+
+			DisplayHiddenWord(selectedWord,chosenLetters);
+
+			numberOfChances--;
+			if (numberOfChances == 0) {
+				System.out.println("perdu");
+				break;
 			}
-
 		}
-
-
 	}
-
 }
