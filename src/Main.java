@@ -6,25 +6,28 @@ public class Main {
 		
 		while(i<selectedWord.length()) {
 			if(chosenLetters.contains(selectedWord.charAt(i))) {
-				System.out.print(selectedWord.charAt(i));
+				System.out.print(selectedWord.charAt(i)+" ");
 			}
 			else 
 				{
-				System.out.print(" _");
+				System.out.print("_ ");
 				}
 			i++;
 		}
 		return;
 	}
 
+	public static void GetLetter(int i) 
+	{
+		System.out.println("Type your letter! It's your "+ i +" chance" );
+		Scanner sc =  new Scanner(System.in);
+		String answer = sc.nextLine();
+		char carac = answer.charAt(0);	
+	}
+	
+	
+	
 	public static void main(String[] args) {
-
-
-		//test again
-
-		//test
-		
-
 
 		ArrayList<String> words = new ArrayList<String>();
 		
@@ -49,9 +52,9 @@ public class Main {
 
 		int numberOfChances = 8;
 		ArrayList<Character> chosenLetters = new ArrayList<Character>();
-		chosenLetters.add('a');
-		chosenLetters.add('b');
-		String myWord= "abc";
+		chosenLetters.add('c');
+		//chosenLetters.add('b');
+		String myWord= "cabcc";
 		DisplayHiddenWord(myWord,chosenLetters);
 		
 
