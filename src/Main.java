@@ -19,12 +19,12 @@ public class Main {
 
 	public static void main(String[] args) {
 
-<<<<<<< HEAD
+
 		//test again
-=======
+
 		//test
 		
->>>>>>> origin/Dominique
+
 
 		ArrayList<String> words = new ArrayList<String>();
 		
