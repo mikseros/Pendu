@@ -86,8 +86,9 @@ public class Main {
 			//if(contains_char(selectedWord,cValeurSaisie)) {
 				DisplayHiddenWord(selectedWord,chosenLetters);
 			//}
+			
 
-		}
+		}numberOfChances--;
 
 
 	}
