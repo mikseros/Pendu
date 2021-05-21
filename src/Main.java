@@ -66,17 +66,17 @@ public class Main {
 
 		int numberOfChances = 8;
 		ArrayList<Character> chosenLetters = new ArrayList<Character>();
-<<<<<<< HEAD
+
 		chosenLetters.add('c');
 		//chosenLetters.add('b');
 		String myWord= "cabcc";
 		DisplayHiddenWord(myWord,chosenLetters);
-=======
+
 		//chosenLetters.add('a');
 		//chosenLetters.add('b');
 		//String myWord= "abc";
 		DisplayHiddenWord(selectedWord,chosenLetters);
->>>>>>> Dominique
+
 		
 		Scanner sc = new Scanner(System.in);
 		while (chosenLetters.size()<numberOfChances) {
