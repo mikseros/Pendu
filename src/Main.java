@@ -14,9 +14,10 @@ public class Main {
 	}
 	public static char GetLetter(int i) 
 	{
-		System.out.println("Type your letter! you still have "+(i) +" chances left");
+		System.out.println("Type your letter! you still have "+(8-i) +" chances left");
 		Scanner sc =  new Scanner(System.in);
 		String answer = sc.nextLine();
+		String answerConverted = answer.toLowerCase();
 		char carac = answer.charAt(0);	
 		return carac;
 	}
@@ -34,22 +35,26 @@ public class Main {
         return containsResult;
     }
 	
-	public static void DisplayHiddenWord (String selectedWord, ArrayList<Character> chosenLetters) 
+	public static String DisplayHiddenWord (String selectedWord, ArrayList<Character> chosenLetters) 
 	{
-		int i=0;
-		
+		int i = 0;
+		char[] wordTab = new char[selectedWord.length()];
 		while(i<selectedWord.length()) {
 			if(chosenLetters.contains(selectedWord.charAt(i))) {
 				System.out.print(selectedWord.charAt(i)+" ");
+				wordTab[i]=selectedWord.charAt(i);
 			}
 			else 
 				{
 				System.out.print("_ ");
+				wordTab[i]= '_';
 				}
 			i++;
 		}
-		return;
+		String charFound = new String (wordTab);
+		return charFound;
 	}
+
 
 		
 	public static void main(String[] args) {
@@ -65,18 +70,28 @@ public class Main {
 		String selectedWord = (String) words.get(wordIndex);
 		ArrayList<Character> chosenLetters = new ArrayList<Character>();
 		DisplayHiddenWord(selectedWord,chosenLetters);
-		
-		while (0<numberOfChances) {
-			char ValeurSaisie = GetLetter(numberOfChances);
+		//String charFound = new String (DisplayHiddenWord(selectedWord,chosenLetters));
+		while (i<numberOfChances) {
+			char ValeurSaisie = GetLetter(i);
 			System.out.println("Vous avez saisi "+ ValeurSaisie);
 			chosenLetters.add(ValeurSaisie);
-			DisplayHiddenWord(selectedWord,chosenLetters);
+			
 			if (!containsChar(selectedWord,ValeurSaisie))
-				numberOfChances--;
 			i++;
-
+			//System.out.println(DisplayHiddenWord(selectedWord,chosenLetters));
+			
+			if (!containsChar(DisplayHiddenWord(selectedWord,chosenLetters),'_')) 
+			{
+				System.out.println("Good Job!");
+				break;
+			}
 		}
-		System.out.println("Perdu");
+		
+		if (i>=numberOfChances) 
+		{
+			System.out.println("You Loose! Press T to try again, Q to quit");
+		}
+
 
 
 	}
