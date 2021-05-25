@@ -62,7 +62,6 @@ public class Main {
 	}
 
 
-		
 	public static void main(String[] args) {
 		
 		ImageIcon image1 = new ImageIcon("1.png");
@@ -88,11 +87,11 @@ public class Main {
 		label.setHorizontalAlignment(JLabel.CENTER);
 		label.setBounds(0, 0, 500, 500);
 		
-		 JFrame frame = new JFrame();
-	     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	     frame.setSize(1000,500);
-	     frame.setVisible(true);
-	     frame.add(label);
+		JFrame frame = new JFrame();
+	     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    	frame.setSize(1000,500);
+	     	frame.setVisible(true);
+	     	frame.add(label);
 		
 		ArrayList words = createList();
 		int numberOfChances = 8;
@@ -113,9 +112,8 @@ public class Main {
 			
 			if (!containsChar(selectedWord,ValeurSaisie))
 			i++;
-<<<<<<< HEAD
-=======
-			
+
+	
 			if (i == 1) {
 				frame.setVisible(true);
 				label.setIcon(image1);
@@ -159,7 +157,7 @@ public class Main {
 			
 			frame.pack();
 			
->>>>>>> Mikolaj
+
 			//System.out.println(DisplayHiddenWord(selectedWord,chosenLetters));
 			
 			if (!containsChar(DisplayHiddenWord(selectedWord,chosenLetters),'_')) 
@@ -167,23 +165,20 @@ public class Main {
 				System.out.println("Good Job!");
 				break;
 			}
-<<<<<<< HEAD
+
 		}
 		
 		if (i>=numberOfChances) 
 		{
 			System.out.println("You Loose! Press T to try again, Q to quit");
 		}
-=======
+
 		}
 		
 		if (i>=numberOfChances) 
 		{
 			System.out.println("You Loose! Press T to try again, Q to quit");
 		}
->>>>>>> Mikolaj
-
-
 
 	}
 
