@@ -14,7 +14,7 @@ public class Main {
 	}
 	public static char GetLetter(int i) 
 	{
-		System.out.println("Type your letter! you still have "+(8-i) +" chances left");
+		System.out.println("Type your letter! you still have "+(i) +" chances left");
 		Scanner sc =  new Scanner(System.in);
 		String answer = sc.nextLine();
 		char carac = answer.charAt(0);	
@@ -66,15 +66,17 @@ public class Main {
 		ArrayList<Character> chosenLetters = new ArrayList<Character>();
 		DisplayHiddenWord(selectedWord,chosenLetters);
 		
-		while (i<numberOfChances) {
-			char ValeurSaisie = GetLetter(i);
+		while (0<numberOfChances) {
+			char ValeurSaisie = GetLetter(numberOfChances);
 			System.out.println("Vous avez saisi "+ ValeurSaisie);
 			chosenLetters.add(ValeurSaisie);
 			DisplayHiddenWord(selectedWord,chosenLetters);
 			if (!containsChar(selectedWord,ValeurSaisie))
-				i++;
+				numberOfChances--;
+			i++;
 
 		}
+		System.out.println("Perdu");
 
 
 	}
