@@ -1,4 +1,10 @@
+import java.awt.Color;
+import java.awt.Font;
 import java.util.*;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 public class Main {
 	
 	public static ArrayList <String>createList()
@@ -59,6 +65,35 @@ public class Main {
 		
 	public static void main(String[] args) {
 		
+		ImageIcon image1 = new ImageIcon("1.png");
+		ImageIcon image2 = new ImageIcon("2.png");
+		ImageIcon image3 = new ImageIcon("3.png");
+		ImageIcon image4 = new ImageIcon("4.png");
+		ImageIcon image5 = new ImageIcon("5.png");
+		ImageIcon image6 = new ImageIcon("6.png");
+		ImageIcon image7 = new ImageIcon("7.png");
+		ImageIcon image8 = new ImageIcon("8.png");
+		
+		JLabel label = new JLabel();
+		label.setText("This is the hangman game!");
+		label.setIcon(null);
+		label.setHorizontalTextPosition(JLabel.CENTER);
+		label.setVerticalTextPosition(JLabel.TOP);
+		label.setForeground(new Color(123,0,0));
+		label.setFont(new Font("MV Boli", Font.PLAIN, 50));
+		label.setIconTextGap(-25);
+		label.setBackground(Color.black);
+		label.setOpaque(true);
+		label.setVerticalAlignment(JLabel.CENTER);
+		label.setHorizontalAlignment(JLabel.CENTER);
+		label.setBounds(0, 0, 500, 500);
+		
+		 JFrame frame = new JFrame();
+	     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	     frame.setSize(1000,500);
+	     frame.setVisible(true);
+	     frame.add(label);
+		
 		ArrayList words = createList();
 		int numberOfChances = 8;
 		int listLength = words.size();
@@ -78,6 +113,53 @@ public class Main {
 			
 			if (!containsChar(selectedWord,ValeurSaisie))
 			i++;
+<<<<<<< HEAD
+=======
+			
+			if (i == 1) {
+				frame.setVisible(true);
+				label.setIcon(image1);
+				label.setText("This letter isn't contained in the word!");
+			}
+			else if (i == 2) {
+				label.setIcon(image2);
+				frame.setVisible(true);
+				label.setText("This letter isn't contained in the word!");
+			}
+			else if (i == 3) {
+				label.setIcon(image3);
+				frame.setVisible(true);
+				label.setText("This letter isn't contained in the word!");
+			}
+			else if (i == 4) {
+				label.setIcon(image4);
+				frame.setVisible(true);
+				label.setText("This letter isn't contained in the word!");
+			}
+			else if (i == 5) {
+				label.setIcon(image5);
+				frame.setVisible(true);
+				label.setText("This letter isn't contained in the word!");
+			}
+			else if (i == 6) {
+				label.setIcon(image6);
+				frame.setVisible(true);
+				label.setText("This letter isn't contained in the word!");
+			}
+			else if (i == 7) {
+				label.setIcon(image7);
+				frame.setVisible(true);
+				label.setText("This letter isn't contained in the word!");
+			}
+			else if (i == 8) {
+				label.setIcon(image8);
+				frame.setVisible(true);
+				label.setText("You loose! Try again!");
+			}
+			
+			frame.pack();
+			
+>>>>>>> Mikolaj
 			//System.out.println(DisplayHiddenWord(selectedWord,chosenLetters));
 			
 			if (!containsChar(DisplayHiddenWord(selectedWord,chosenLetters),'_')) 
@@ -85,12 +167,21 @@ public class Main {
 				System.out.println("Good Job!");
 				break;
 			}
+<<<<<<< HEAD
 		}
 		
 		if (i>=numberOfChances) 
 		{
 			System.out.println("You Loose! Press T to try again, Q to quit");
 		}
+=======
+		}
+		
+		if (i>=numberOfChances) 
+		{
+			System.out.println("You Loose! Press T to try again, Q to quit");
+		}
+>>>>>>> Mikolaj
 
 
 
