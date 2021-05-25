@@ -136,8 +136,7 @@ public class Main {
 			}
 			else if (numberOfChances == 4) {
 				label.setIcon(image4);
-				frame.setVisible(true);
-				label.setText("This letter isn't contained in the word!");
+				frame.setVisible(true);label.setText("This letter isn't contained in the word!");
 			}
 			else if (numberOfChances == 3) {
 				label.setIcon(image5);
