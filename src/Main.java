@@ -1,41 +1,8 @@
 import java.util.*;
 public class Main {
-
-	public static void DisplayHiddenWord (String selectedWord, ArrayList<Character> chosenLetters) 
+	
+	public static ArrayList <String>createList()
 	{
-		int i=0;
-		
-		while(i<selectedWord.length()) {
-			if(chosenLetters.contains(selectedWord.charAt(i))) {
-				System.out.print(selectedWord.charAt(i)+" ");
-			}
-			else 
-				{
-				System.out.print("_ ");
-				}
-			i++;
-		}
-
-		return;
-	}
-
-	public static void GetLetter(int i) 
-	{
-		System.out.println("Type your letter! It's your "+ i +" chance" );
-		Scanner sc =  new Scanner(System.in);
-		String answer = sc.nextLine();
-		char carac = answer.charAt(0);	
-	}
-	
-	
-	
-	public static void main(String[] args) {
-
-
-	
-	public static ArrayList createList()
-	{
-
 		ArrayList<String> words = new ArrayList<String>();
 		
 		words.add("voiture");
@@ -97,32 +64,6 @@ public class Main {
 		int i = 0;
 		String selectedWord = (String) words.get(wordIndex);
 		ArrayList<Character> chosenLetters = new ArrayList<Character>();
-
-
-
-		chosenLetters.add('c');
-		//chosenLetters.add('b');
-		String myWord= "cabcc";
-		DisplayHiddenWord(myWord,chosenLetters);
-
-		//chosenLetters.add('a');
-		//chosenLetters.add('b');
-		//String myWord= "abc";
-
-		DisplayHiddenWord(selectedWord,chosenLetters);
-
-		
-		Scanner sc = new Scanner(System.in);
-		while (numberOfChances > 0) {
-			char cValeurSaisie = sc.next().charAt(0);
-			System.out.println("Vous avez saisi "+ cValeurSaisie);
-			chosenLetters.add(cValeurSaisie);
-
-			//if(contains_char(selectedWord,cValeurSaisie)) {
-				DisplayHiddenWord(selectedWord,chosenLetters);
-			//}
-			
-
 		DisplayHiddenWord(selectedWord,chosenLetters);
 		
 		while (i<numberOfChances) {
@@ -136,17 +77,6 @@ public class Main {
 		}
 
 
-
-		}numberOfChances--;
-
-
-			DisplayHiddenWord(selectedWord,chosenLetters);
-
-			numberOfChances--;
-			if (numberOfChances == 0) {
-				System.out.println("perdu");
-				break;
-			}
-		}
 	}
+
 }
