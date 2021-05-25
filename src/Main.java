@@ -1,3 +1,7 @@
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Font;
+import java.awt.LayoutManager;
 import java.util.*;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -69,10 +73,28 @@ public class Main {
 		ImageIcon image6 = new ImageIcon("6.png");
 		ImageIcon image7 = new ImageIcon("7.png");
 		ImageIcon image8 = new ImageIcon("8.png");
+		
 		JLabel label = new JLabel();
-		JFrame frame = new JFrame();
-		frame.add(label);
-		frame.setSize(500,500);
+		label.setText("This is the hangman game!");
+		label.setIcon(null);
+		label.setHorizontalTextPosition(JLabel.CENTER);
+		label.setVerticalTextPosition(JLabel.TOP);
+		label.setForeground(new Color(123,0,0));
+		label.setFont(new Font("MV Boli", Font.PLAIN, 50));
+		label.setIconTextGap(-25);
+		label.setBackground(Color.black);
+		label.setOpaque(true);
+		label.setVerticalAlignment(JLabel.CENTER);
+		label.setHorizontalAlignment(JLabel.CENTER);
+		label.setBounds(0, 0, 500, 500);
+		
+		 JFrame frame = new JFrame();
+	     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	     frame.setSize(1000,500);
+	     frame.setVisible(true);
+	     frame.add(label);
+
+		
 		 
 		
 		
@@ -99,36 +121,42 @@ public class Main {
 			i++;
 			if (numberOfChances == 7) {
 				frame.setVisible(true);
-				frame.setSize(500,500);
 				label.setIcon(image1);
+				label.setText("This letter isn't contained in the word!");
 			}
 			else if (numberOfChances == 6) {
 				label.setIcon(image2);
 				frame.setVisible(true);
+				label.setText("This letter isn't contained in the word!");
 			}
 			else if (numberOfChances == 5) {
 				label.setIcon(image3);
 				frame.setVisible(true);
+				label.setText("This letter isn't contained in the word!");
 			}
 			else if (numberOfChances == 4) {
 				label.setIcon(image4);
-				frame.setVisible(true);
+				frame.setVisible(true);label.setText("This letter isn't contained in the word!");
 			}
 			else if (numberOfChances == 3) {
 				label.setIcon(image5);
 				frame.setVisible(true);
+				label.setText("This letter isn't contained in the word!");
 			}
 			else if (numberOfChances == 2) {
 				label.setIcon(image6);
 				frame.setVisible(true);
+				label.setText("This letter isn't contained in the word!");
 			}
 			else if (numberOfChances == 1) {
 				label.setIcon(image7);
 				frame.setVisible(true);
+				label.setText("This letter isn't contained in the word!");
 			}
 			else if (numberOfChances == 0) {
 				label.setIcon(image8);
 				frame.setVisible(true);
+				label.setText("You loose! Try again!");
 			}
 			
 			frame.pack();
