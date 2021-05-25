@@ -1,6 +1,6 @@
 import java.util.*;
 public class Main {
-<<<<<<< HEAD
+
 	public static void DisplayHiddenWord (String selectedWord, ArrayList<Character> chosenLetters) 
 	{
 		int i=0;
@@ -31,11 +31,11 @@ public class Main {
 	
 	public static void main(String[] args) {
 
-=======
+
 	
 	public static ArrayList createList()
 	{
->>>>>>> Amal
+
 		ArrayList<String> words = new ArrayList<String>();
 		
 		words.add("voiture");
@@ -97,17 +97,9 @@ public class Main {
 		int i = 0;
 		String selectedWord = (String) words.get(wordIndex);
 		ArrayList<Character> chosenLetters = new ArrayList<Character>();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 1fe10b73edb9c00776e55979bd15bc93fbfb9d12
-=======
-		
->>>>>>> 6fd236b5a3e96365b3b6a8182f8f7710c08c2a22
+
+
 		chosenLetters.add('c');
 		//chosenLetters.add('b');
 		String myWord= "cabcc";
@@ -130,7 +122,7 @@ public class Main {
 				DisplayHiddenWord(selectedWord,chosenLetters);
 			//}
 			
-=======
+
 		DisplayHiddenWord(selectedWord,chosenLetters);
 		
 		while (i<numberOfChances) {
@@ -143,7 +135,7 @@ public class Main {
 
 		}
 
->>>>>>> Amal
+
 
 		}numberOfChances--;
 
