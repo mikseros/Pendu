@@ -1,17 +1,13 @@
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Font;
-import java.awt.LayoutManager;
 import java.util.*;
-import javax.swing.BorderFactory;
+
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.border.Border;
-
 public class Main {
 	
-	public static ArrayList<String> createList()
+	public static ArrayList <String>createList()
 	{
 		ArrayList<String> words = new ArrayList<String>();
 		
@@ -24,9 +20,10 @@ public class Main {
 	}
 	public static char GetLetter(int i) 
 	{
-		System.out.println("Type your letter! you still have "+(i) +" chances left");
+		System.out.println("Type your letter! you still have "+(8-i) +" chances left");
 		Scanner sc =  new Scanner(System.in);
-		String answer = sc.nextLine().toLowerCase();
+		String answer = sc.nextLine();
+		String answerConverted = answer.toLowerCase();
 		char carac = answer.charAt(0);	
 		return carac;
 	}
@@ -44,25 +41,28 @@ public class Main {
         return containsResult;
     }
 	
-	public static void DisplayHiddenWord (String selectedWord, ArrayList<Character> chosenLetters) 
+	public static String DisplayHiddenWord (String selectedWord, ArrayList<Character> chosenLetters) 
 	{
-		int i=0;
-		
+		int i = 0;
+		char[] wordTab = new char[selectedWord.length()];
 		while(i<selectedWord.length()) {
 			if(chosenLetters.contains(selectedWord.charAt(i))) {
 				System.out.print(selectedWord.charAt(i)+" ");
+				wordTab[i]=selectedWord.charAt(i);
 			}
 			else 
 				{
 				System.out.print("_ ");
+				wordTab[i]= '_';
 				}
 			i++;
 		}
-		return;
-		
+		String charFound = new String (wordTab);
+		return charFound;
 	}
-	
-	
+
+
+		
 	public static void main(String[] args) {
 		
 		ImageIcon image1 = new ImageIcon("1.png");
@@ -93,11 +93,6 @@ public class Main {
 	     frame.setSize(1000,500);
 	     frame.setVisible(true);
 	     frame.add(label);
-
-		
-		 
-		
-		
 		
 		ArrayList words = createList();
 		int numberOfChances = 8;
@@ -106,66 +101,78 @@ public class Main {
 		
 		wordIndex = (int) (Math.random()*listLength);
 		System.out.println(wordIndex);
+		int i = 0;
 		String selectedWord = (String) words.get(wordIndex);
 		ArrayList<Character> chosenLetters = new ArrayList<Character>();
 		DisplayHiddenWord(selectedWord,chosenLetters);
-		
-		int i = 0;
-		while (0<numberOfChances) {
-			char ValeurSaisie = GetLetter(numberOfChances);
+		//String charFound = new String (DisplayHiddenWord(selectedWord,chosenLetters));
+		while (i<numberOfChances) {
+			char ValeurSaisie = GetLetter(i);
 			System.out.println("Vous avez saisi "+ ValeurSaisie);
 			chosenLetters.add(ValeurSaisie);
-			DisplayHiddenWord(selectedWord,chosenLetters);
+			
 			if (!containsChar(selectedWord,ValeurSaisie))
-				numberOfChances--;
 			i++;
-			if (numberOfChances == 7) {
+			
+			if (i == 1) {
 				frame.setVisible(true);
 				label.setIcon(image1);
 				label.setText("This letter isn't contained in the word!");
 			}
-			else if (numberOfChances == 6) {
+			else if (i == 2) {
 				label.setIcon(image2);
 				frame.setVisible(true);
 				label.setText("This letter isn't contained in the word!");
 			}
-			else if (numberOfChances == 5) {
+			else if (i == 3) {
 				label.setIcon(image3);
 				frame.setVisible(true);
 				label.setText("This letter isn't contained in the word!");
 			}
-			else if (numberOfChances == 4) {
+			else if (i == 4) {
 				label.setIcon(image4);
 				frame.setVisible(true);
 				label.setText("This letter isn't contained in the word!");
 			}
-			else if (numberOfChances == 3) {
+			else if (i == 5) {
 				label.setIcon(image5);
 				frame.setVisible(true);
 				label.setText("This letter isn't contained in the word!");
 			}
-			else if (numberOfChances == 2) {
+			else if (i == 6) {
 				label.setIcon(image6);
 				frame.setVisible(true);
 				label.setText("This letter isn't contained in the word!");
 			}
-			else if (numberOfChances == 1) {
+			else if (i == 7) {
 				label.setIcon(image7);
 				frame.setVisible(true);
 				label.setText("This letter isn't contained in the word!");
 			}
-			else if (numberOfChances == 0) {
+			else if (i == 8) {
 				label.setIcon(image8);
 				frame.setVisible(true);
 				label.setText("You loose! Try again!");
 			}
 			
 			frame.pack();
-				
+			
+			//System.out.println(DisplayHiddenWord(selectedWord,chosenLetters));
+			
+			if (!containsChar(DisplayHiddenWord(selectedWord,chosenLetters),'_')) 
+			{
+				System.out.println("Good Job!");
+				break;
+			}
 		}
-		System.out.println("Perdu");
 		
+		if (i>=numberOfChances) 
+		{
+			System.out.println("You Loose! Press T to try again, Q to quit");
+		}
+
+
+
 	}
-	
 
 }
