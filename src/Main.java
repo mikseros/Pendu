@@ -61,7 +61,6 @@ public class Main {
 		return charFound;
 	}
 
-
 	public static void main(String[] args) {
 		
 		ImageIcon image1 = new ImageIcon("1.png");
@@ -171,8 +170,6 @@ public class Main {
 		if (i>=numberOfChances) 
 		{
 			System.out.println("You Loose! Press T to try again, Q to quit");
-		}
-
 		}
 		
 		if (i>=numberOfChances) 
