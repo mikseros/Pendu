@@ -88,7 +88,7 @@ public class Main {
 		
 		JFrame frame = new JFrame();
 	     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    	frame.setSize(1000,500);
+	    	frame.setSize(1000,1000);
 	     	frame.setVisible(true);
 	     	frame.add(label);
 		
@@ -115,54 +115,43 @@ public class Main {
 	
 			if (i == 1) {
 				frame.setVisible(true);
-				label.setIcon(image1);
 				label.setText("This letter isn't contained in the word!");
 			}
 			else if (i == 2) {
 				label.setIcon(image2);
-				frame.setVisible(true);
 				label.setText("This letter isn't contained in the word!");
 			}
 			else if (i == 3) {
 				label.setIcon(image3);
-				frame.setVisible(true);
 				label.setText("This letter isn't contained in the word!");
 			}
 			else if (i == 4) {
 				label.setIcon(image4);
-				frame.setVisible(true);
 				label.setText("This letter isn't contained in the word!");
 			}
 			else if (i == 5) {
 				label.setIcon(image5);
-				frame.setVisible(true);
 				label.setText("This letter isn't contained in the word!");
 			}
 			else if (i == 6) {
 				label.setIcon(image6);
-				frame.setVisible(true);
 				label.setText("This letter isn't contained in the word!");
 			}
 			else if (i == 7) {
 				label.setIcon(image7);
-				frame.setVisible(true);
 				label.setText("This letter isn't contained in the word!");
 			}
 			else if (i == 8) {
 				label.setIcon(image8);
-				frame.setVisible(true);
 				label.setText("You loose! Try again!");
 			}
 			
 			frame.pack();
-			
-
 			//System.out.println(DisplayHiddenWord(selectedWord,chosenLetters));
 			
 			if (!containsChar(DisplayHiddenWord(selectedWord,chosenLetters),'_')) 
 			{
 				System.out.println("Good Job!");
-				break;
 			}
 
 		}
